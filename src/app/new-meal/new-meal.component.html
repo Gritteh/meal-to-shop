@@ -6,9 +6,10 @@
             <input type="text">
         </div>
         <div class="newmeal__form">
-            <input type="text" (keyup)="keyPress($event)" (keyup.enter)="addIngredient(currentIngredient)" [value]="currentIngredient">
-            <button (click)="addIngredient(currentIngredient)">ADD</button>
-            <ul><li *ngFor="let ing of ingredients">{{ ing }}</li></ul>
+            <!-- <input type="text" (keyup)="keyPress($event)" (keyup.enter)="addIngredient(currentIngredient)" [value]="currentIngredient">
+            <button (click)="addIngredient(currentIngredient)">ADD</button> -->
+            <app-item *ngFor="let ing of ingredients" [name]="ing"></app-item>
+            <app-add-item (newItem)="newItemHandler($event)"></app-add-item>
         </div>
         <a (click)="saveMeal()"><div class="newmeal__save">
             Save

@@ -13,12 +13,13 @@ export class NewMealComponent {
 
     keyPress(event: KeyboardEvent) {
         this.currentIngredient = (event.target as HTMLInputElement).value;
-        console.log(this.currentIngredient);
     }
     addIngredient(ingredient: string) {
         this.ingredients.push(ingredient.charAt(0).toUpperCase() + ingredient.slice(1));
         this.currentIngredient = '';
-        console.log(this.ingredients);
+    }
+    newItemHandler(newItem: string) {
+        this.ingredients.push(newItem.charAt(0).toUpperCase() + newItem.slice(1));
     }
 
     saveMeal() {

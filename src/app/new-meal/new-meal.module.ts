@@ -1,19 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { MealManagerComponent } from './meal-manager.component';
+import { AppRoutingModule } from '../app-routing.module';
+
 import { NewMealComponent } from './new-meal.component';
+import { ItemComponent } from '../item/item.component';
 
 @NgModule({
   declarations: [
-    MealManagerComponent,
-    NewMealComponent
+    NewMealComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: []
+  providers: [],
 })
-export class MealManagerModule { }
+export class NewMealModule { }

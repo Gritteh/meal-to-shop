@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BaseComponent } from './app.component';
-import { MealToShopComponent } from './homepage.component';
-import { MealManagerComponent } from './meal-manager.component';
-import { NewMealComponent } from './new-meal.component';
+import { MealToShopComponent } from './homepage/homepage.component';
+import { MealManagerComponent } from './meal-manager/meal-manager.component';
+import { NewMealComponent } from './new-meal/new-meal.component';
+import { ItemComponent } from './item/item.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 @NgModule({
   declarations: [
     BaseComponent,
     MealToShopComponent,
     MealManagerComponent,
-    NewMealComponent
+    NewMealComponent,
+    ItemComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
