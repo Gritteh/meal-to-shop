@@ -20,10 +20,23 @@ export class NewMealComponent {
     }
     newItemHandler(newItem: string) {
         this.ingredients.push(newItem.charAt(0).toUpperCase() + newItem.slice(1));
+        console.log(this.ingredients);
     }
 
     saveMeal() {
         this.closeNewMeal.emit();
     }
 
+    removeItem(index: number) {
+        this.ingredients.splice(index, 1);
+        console.log(this.ingredients);
+    }
+
+    changeItemValue(obj: {i: number, input: string}) {
+        this.ingredients.splice(obj.i, 1, obj.input);
+    }
+
+    trackFunc(index: number) {
+        return index;
+    }
 }

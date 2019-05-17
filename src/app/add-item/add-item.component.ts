@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-add-item',
@@ -7,7 +7,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class AddItemComponent {
     @Output() newItem: EventEmitter<string> = new EventEmitter<string>();
+    @ViewChild('item') itemField: ElementRef;
     name = '';
+    placeholder = 'Onions';
 
     keyPress(event: KeyboardEvent) {
         this.name = (event.target as HTMLInputElement).value;
@@ -15,6 +17,8 @@ export class AddItemComponent {
     finishedTyping() {
         this.newItem.emit(this.name);
         this.name = '';
+        this.placeholder = '';
+        this.itemField.nativeElement.focus();
     }
 
 }

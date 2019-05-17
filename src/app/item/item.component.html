@@ -1,3 +1,4 @@
 <div class="item">
-    <input class="item__name" type="text" [value]="name" (keyup)="keyPress($event)" (keyup.enter)="finishedTyping()">
+    <div class="item__remove" (click)="removeSelf()">-</div>
+    <input class="item__name" type="text" [value]="name" (keyup)="keyPress($event)" (keyup)="update()" (keyup.enter)="finishedTyping()">
 </div>

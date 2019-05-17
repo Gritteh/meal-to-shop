@@ -1,4 +1,4 @@
 <div class="add-item">
-    <input class="add-item__name" type="text" [value]="name" (keyup)="keyPress($event)" (keyup.enter)="finishedTyping()">
+    <input #item class="add-item__name" [placeholder]="placeholder" type="text" [value]="name" (keyup)="keyPress($event)" (keyup.enter)="finishedTyping()">
     <button (click)="finishedTyping()">ADD</button>
 </div>
