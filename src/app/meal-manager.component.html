@@ -1,0 +1,36 @@
+<div [ngClass]="{ 'hide': makingMeal }" class="widthsetter">
+    <div class="meal-manager">
+        <div class="meal-manager__title">Meals</div>
+        <div class="meal-manager__meals">
+            <a><div class="meals__meal">Chilli</div></a>
+            <a><div class="meals__meal">Black Bean</div></a>
+            <a><div class="meals__meal">Lamb Stew</div></a>
+            <a><div class="meals__meal">Sausage and Mash</div></a>
+            <a><div class="meals__meal">Steak and Mash</div></a>
+            <a><div class="meals__meal">Chicken Thighs</div></a>
+            <a><div class="meals__meal">Chilli</div></a>
+            <a><div class="meals__meal">Black Bean</div></a>
+            <a><div class="meals__meal">Lamb Stew</div></a>
+            <a><div class="meals__meal">Sausage and Mash</div></a>
+            <a><div class="meals__meal">Steak and Mash</div></a>
+            <a><div class="meals__meal">Chicken Thighs</div></a>
+            <a><div class="meals__meal">Chilli</div></a>
+            <a><div class="meals__meal">Black Bean</div></a>
+            <a><div class="meals__meal">Lamb Stew</div></a>
+            <a><div class="meals__meal">Sausage and Mash</div></a>
+            <a><div class="meals__meal">Steak and Mash</div></a>
+            <a><div class="meals__meal">Chicken Thighs</div></a>
+            <a><div class="meals__meal">Chilli</div></a>
+            <a><div class="meals__meal">Black Bean</div></a>
+            <a><div class="meals__meal">Lamb Stew</div></a>
+            <a><div class="meals__meal">Sausage and Mash</div></a>
+            <a><div class="meals__meal">Steak and Mash</div></a>
+            <a><div class="meals__meal">Chicken Thighs</div></a>
+        </div>
+        <a (click)="showNew()"><div class="meal-manager__newmeal">
+            Add Meal
+        </div></a>
+    </div>
+
+</div>
+<app-new-meal *ngIf="makingMeal" (closeNewMeal)="closeNew()"></app-new-meal>

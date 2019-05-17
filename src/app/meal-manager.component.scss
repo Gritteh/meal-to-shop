@@ -1,0 +1,55 @@
+.widthsetter {
+    &.hide {
+        display: none;
+    }
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #f0f4c3;
+    box-sizing: border-box;
+    color: #212121;
+    .meal-manager {
+        width: 400px;
+        margin: 0 auto;
+        height: 100%;
+        .meal-manager__title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            height: 10%;
+            font-size: 40px;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .meal-manager__meals {
+            height: 80%;
+            box-sizing: border-box;
+            border: 1px solid black;
+            overflow-y: scroll;
+            > a {
+                &:first-of-type .meals__meal {
+                    padding-top: 20px;
+                }
+                .meals__meal {
+                    padding: 10px;
+                    font-size: 20px;
+                }
+            }
+        }
+        > a {
+            .meal-manager__newmeal {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 10%;
+                box-sizing: border-box;
+                font-size: 30px;
+                cursor: pointer;
+                background-color: #7cb342;
+            }
+        }
+    }
+
+
+}

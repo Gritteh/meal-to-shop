@@ -1,0 +1,77 @@
+.widthsetter {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #f0f4c3;
+    box-sizing: border-box;
+    color: #212121;
+    .newmeal {
+        width: 400px;
+        margin: 0 auto;
+        height: 100%;
+        .newmeal__title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+            height: 10%;
+            font-size: 40px;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .newmeal__name {
+            box-sizing: border-box;
+            height: 5%;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            p {
+                display: inline-block;
+                margin-right: 10px;
+            }
+            input {
+                background-color: rgba(0,0,0,0);
+                border: none;
+                font-size: 15px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+        .newmeal__form {
+            height: 75%;
+            box-sizing: border-box;
+            overflow-y: scroll;
+            padding: 20px;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+            ul li {
+                padding: 5px;
+            }
+            input {
+                height: 18px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            button {
+                font-size: 15px;
+                background-color: #7cb342;
+            }
+        }
+        > a {
+            .newmeal__save {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 10%;
+                box-sizing: border-box;
+                font-size: 30px;
+                cursor: pointer;
+                background-color: #7cb342;
+            }
+        }
+    }
+
+
+}
