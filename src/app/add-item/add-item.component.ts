@@ -15,10 +15,12 @@ export class AddItemComponent {
         this.name = (event.target as HTMLInputElement).value;
     }
     finishedTyping() {
-        this.newItem.emit(this.name);
-        this.name = '';
-        this.placeholder = '';
-        this.itemField.nativeElement.focus();
+        if (this.name !== '') {
+            this.newItem.emit(this.name);
+            this.name = '';
+            this.placeholder = '';
+            this.itemField.nativeElement.focus();
+        }
     }
 
 }

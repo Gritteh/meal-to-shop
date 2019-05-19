@@ -1,35 +1,36 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { MealStoreService } from '../services/meal-store.service';
 
 @Component({
   selector: 'app-new-meal',
   templateUrl: './new-meal.component.html',
   styleUrls: ['./new-meal.component.scss']
 })
-export class NewMealComponent {
+export class NewMealComponent implements OnInit {
     @Output() closeNewMeal: EventEmitter<any> = new EventEmitter<any>();
+    mealTitle = '';
     currentIngredient = '';
     ingredients: string[] = [];
     inputVal: string;
+    meals: {title: string, ingredients: string[]}[];
 
-    keyPress(event: KeyboardEvent) {
-        this.currentIngredient = (event.target as HTMLInputElement).value;
+    constructor(private data: MealStoreService) {}
+
+    ngOnInit() {
+        this.data.mealStore.subscribe(meals => this.meals = meals);
     }
-    addIngredient(ingredient: string) {
-        this.ingredients.push(ingredient.charAt(0).toUpperCase() + ingredient.slice(1));
-        this.currentIngredient = '';
-    }
+
     newItemHandler(newItem: string) {
         this.ingredients.push(newItem.charAt(0).toUpperCase() + newItem.slice(1));
-        console.log(this.ingredients);
     }
 
     saveMeal() {
+        this.data.addMealToStore({title: this.mealTitle, ingredients: this.ingredients});
         this.closeNewMeal.emit();
     }
 
     removeItem(index: number) {
         this.ingredients.splice(index, 1);
-        console.log(this.ingredients);
     }
 
     changeItemValue(obj: {i: number, input: string}) {
@@ -38,5 +39,10 @@ export class NewMealComponent {
 
     trackFunc(index: number) {
         return index;
+    }
+
+    updateTitle(event: KeyboardEvent) {
+        const rawTitle = (event.target as HTMLInputElement).value;
+        this.mealTitle = rawTitle.charAt(0).toUpperCase() + rawTitle.slice(1);
     }
 }

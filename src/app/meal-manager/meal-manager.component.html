@@ -27,10 +27,10 @@
             <a><div class="meals__meal">Steak and Mash</div></a>
             <a><div class="meals__meal">Chicken Thighs</div></a>
         </div>
-        <a (click)="showNew()"><div class="meal-manager__newmeal">
+        <a routerLink="/new-meal"><div class="meal-manager__newmeal">
             Add Meal
         </div></a>
     </div>
 
 </div>
-<app-new-meal *ngIf="makingMeal" (closeNewMeal)="closeNew()"></app-new-meal>
+<!-- <app-new-meal *ngIf="makingMeal" (closeNewMeal)="closeNew()"></app-new-meal> -->

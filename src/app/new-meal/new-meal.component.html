@@ -4,16 +4,14 @@
         <div class="newmeal__name">
             <div class="name__container">
                 <p>Name:</p>
-                <input type="text">
+                <input type="text" [value]="mealTitle" (keyup)="updateTitle($event)">
             </div>
         </div>
         <div class="newmeal__form">
-            <!-- <input type="text" (keyup)="keyPress($event)" (keyup.enter)="addIngredient(currentIngredient)" [value]="currentIngredient">
-            <button (click)="addIngredient(currentIngredient)">ADD</button> -->
             <app-item *ngFor="let ing of ingredients; let i = index; trackBy: trackFunc" [itemIndex]="i" [name]="ing" (deleteSelf)="removeItem($event)" (updateValue)="changeItemValue($event)"></app-item>
             <app-add-item (newItem)="newItemHandler($event)"></app-add-item>
         </div>
-        <a (click)="saveMeal()"><div class="newmeal__save">
+        <a routerLink="/meal-manager" (click)="saveMeal()"><div class="newmeal__save">
             Save
         </div></a>
     </div>

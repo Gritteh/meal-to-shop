@@ -8,6 +8,7 @@ import { MealManagerComponent } from './meal-manager/meal-manager.component';
 import { NewMealComponent } from './new-meal/new-meal.component';
 import { ItemComponent } from './item/item.component';
 import { AddItemComponent } from './add-item/add-item.component';
+import { MealStoreService } from './services/meal-store.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AddItemComponent } from './add-item/add-item.component';
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [MealStoreService],
   bootstrap: [BaseComponent]
 })
 export class AppModule { }
